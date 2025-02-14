@@ -20,3 +20,18 @@ console.log(calculateDiscount(250, 0.15)); // Expected output: "Final Price: $21
 
 
 
+// Task 3: Arrow Function
+// Write an arrow function calculateServiceFee(amount, serviceType) that applies a fee
+const calculateServiceFee = (amount, serviceType) => {
+    let fee = 0;
+    if (serviceType === "Premium") fee = amount * 0.15; // 15% of the amount 
+    else if (serviceType === "Standard") fee = amount * 0.10; // 10% of the amount
+    else if (serviceType === "Basic") fee = amount * 0.05; // 5% of the amount 
+    
+    return `Service Fee: $${fee.toFixed(2)}`;
+};
+console.log(calculateServiceFee(200, "Premium")); // Expected output: "Service Fee: $30.00
+console.log(calculateServiceFee(500, "Standard")); // Expected output: "Service Fee: $50.00
+
+
+
