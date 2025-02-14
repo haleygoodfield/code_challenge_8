@@ -35,3 +35,21 @@ console.log(calculateServiceFee(500, "Standard")); // Expected output: "Service 
 
 
 
+// Task 4: Parameters and Arguments
+// Write a function calculateRentalCost(days, carType, insurance = false) that calculates rental costs
+function calculateRentalCost(days, carType, insurance = false) {
+    let carRates = { "Economy": 40, "Standard": 60, "Luxury": 100}; // $40, $60, and $100/day
+    let insuranceCost = 0;
+    if (insurance) {
+        insuranceCost = 20 * days; // Insurance costs an extra $20 per day.
+    }
+    let totalCost= (carRates[carType] * days) + insuranceCost;
+
+    console.log(`Total Rental Cost: $${totalCost}`);
+    
+};
+
+// Test Cases
+calculateRentalCost(3, "Economy", true); // Expected output: "Total Rental Cost: $180
+calculateRentalCost(5, "Luxury", false); // Expected output: "Total Rental Cost: $500
+
