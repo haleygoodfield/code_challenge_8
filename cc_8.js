@@ -68,6 +68,7 @@ function calculateLoanPayment(principal, rate, time) {
     
     console.log(`Total Payment: $${totalPayment.toFixed(2)}`);
 };
+
 // Test Cases
 calculateLoanPayment(1000, 0.05, 2); // Expected output: "Total Payment: $1100.00
 calculateLoanPayment(5000, 0.07, 3); // Expected output: "Total Payment: $6050.00
@@ -87,3 +88,19 @@ filterLargeTransactions(transactions, amount => amount > 1000);
 // Expected output: [1500, 3200, 2500]
 
 
+
+// Task 7: Closures
+// Write a function createCartTracker() that returns another function to add items and maintain a running total
+function createCartTracker() {
+    let cartValue = 0;
+    
+    return function(amount) {
+        cartValue += amount;
+        return `Total Cart Value: $${cartValue}`;
+    };
+};
+
+// Test Cases
+let cart = createCartTracker();
+console.log(cart(20)); // Expected output: "Total Cart Value: $20
+console.log(cart(35)); // Expected output: "Total Cart Value: $55
