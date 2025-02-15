@@ -6,8 +6,8 @@ function calculateSalary(baseSalary, bonus, taxRate) {
 };
 
 // Test Cases
-calculateSalary(5000, 500, 0.1); // Expected output: "Net Salary: $5000.00
-calculateSalary(7000, 1000, 0.15); // Expected output: "Net Salary: $6950.00
+calculateSalary(5000, 500, 0.1); // Expected output: "Net Salary: $5000.00"
+calculateSalary(7000, 1000, 0.15); // Expected output: "Net Salary: $6950.00"
 
 
 
@@ -19,8 +19,8 @@ const calculateDiscount = function(price, discountRate) {
 };
 
 // Test Cases
-calculateDiscount(100, 0.2); // Expected output: "Final Price: $80.00
-calculateDiscount(250, 0.15); // Expected output: "Final Price: $212.50
+calculateDiscount(100, 0.2); // Expected output: "Final Price: $80.00"
+calculateDiscount(250, 0.15); // Expected output: "Final Price: $212.50"
 
 
 
@@ -36,8 +36,8 @@ const calculateServiceFee = (amount, serviceType) => {
 };
 
 // Test Cases
-calculateServiceFee(200, "Premium"); // Expected output: "Service Fee: $30.00
-calculateServiceFee(500, "Standard"); // Expected output: "Service Fee: $50.00
+calculateServiceFee(200, "Premium"); // Expected output: "Service Fee: $30.00"
+calculateServiceFee(500, "Standard"); // Expected output: "Service Fee: $50.00"
 
 
 
@@ -56,8 +56,8 @@ function calculateRentalCost(days, carType, insurance = false) {
 };
 
 // Test Cases
-calculateRentalCost(3, "Economy", true); // Expected output: "Total Rental Cost: $180
-calculateRentalCost(5, "Luxury", false); // Expected output: "Total Rental Cost: $500
+calculateRentalCost(3, "Economy", true); // Expected output: "Total Rental Cost: $180"
+calculateRentalCost(5, "Luxury", false); // Expected output: "Total Rental Cost: $500"
 
 
 
@@ -70,8 +70,8 @@ function calculateLoanPayment(principal, rate, time) {
 };
 
 // Test Cases
-calculateLoanPayment(1000, 0.05, 2); // Expected output: "Total Payment: $1100.00
-calculateLoanPayment(5000, 0.07, 3); // Expected output: "Total Payment: $6050.00
+calculateLoanPayment(1000, 0.05, 2); // Expected output: "Total Payment: $1100.00"
+calculateLoanPayment(5000, 0.07, 3); // Expected output: "Total Payment: $6050.00"
 
 
 
@@ -79,7 +79,7 @@ calculateLoanPayment(5000, 0.07, 3); // Expected output: "Total Payment: $6050.0
 // Write a higher-order function filterLargeTransactions(transactions, filterFunction) to find transactions above $1000
 function filterLargeTransactions(transactions, filterFunction) {
     let largeTransactions = transactions.filter(filterFunction);
-    console.log(`Large Transactions: ${largeTransactions}`);
+    console.log(`Large Transactions: $${largeTransactions}`);
 }; // What is the ? for ??
 
 // Test Cases
@@ -102,5 +102,17 @@ function createCartTracker() {
 
 // Test Cases
 let cart = createCartTracker();
-console.log(cart(20)); // Expected output: "Total Cart Value: $20
-console.log(cart(35)); // Expected output: "Total Cart Value: $55
+console.log(cart(20)); // Expected output: "Total Cart Value: $20"
+console.log(cart(35)); // Expected output: "Total Cart Value: $55"
+
+
+
+// Task 8: Recursion in JavaScript
+// Write a recursive function calculateSavings(years, amount) that projects savings growth
+function calculateSavings(years, amount) {
+    if (years >= 10) return amount;
+    return calculateSavings(years + 1, amount * 1.05); // Each year increases savings by 5% until reaching year 10
+};
+// Test Cases
+console.log(`Projected Savings: $${calculateSavings(8, 1000).toFixed(2)}`); // Expected output: "Projected Savings: $1102.50"
+console.log(`Projected Savings: $${calculateSavings(5, 5000).toFixed(2)}`); // Expected output: "Projected Savings: $6381.41"
