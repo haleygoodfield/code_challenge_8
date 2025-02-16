@@ -80,7 +80,7 @@ calculateLoanPayment(5000, 0.07, 3); // Expected output: "Total Payment: $6050.0
 function filterLargeTransactions(transactions, filterFunction) {
     let largeTransactions = transactions.filter(filterFunction);
     console.log(`Large Transactions: $${largeTransactions}`);
-}; // What is the ? for ??
+}; 
 
 // Test Cases
 let transactions = [200, 1500, 3200, 800, 2500]; // Declare an array transactions with at least five values
